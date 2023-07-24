@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.disastergigihapp.databinding.ActivityMainBinding
 import com.mapbox.maps.MapView
 import com.mapbox.maps.Style
+import com.mapbox.maps.plugin.scalebar.scalebar
 
 var mapView: MapView? = null
 
@@ -17,5 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         mapView = binding.mapView
         mapView?.getMapboxMap()?.loadStyleUri(Style.MAPBOX_STREETS)
+        mapView?.scalebar?.enabled = false
     }
 }
