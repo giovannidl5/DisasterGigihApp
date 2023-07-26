@@ -41,7 +41,7 @@ data class Output(
 	val type: String? = null,
 
 	@SerializedName("geometries")
-	val geometries: Collection<GeometriesItem>? = null
+	val geometries: List<GeometriesItem>? = null
 
 )
 
@@ -54,7 +54,7 @@ data class GeometriesItem(
 	val properties: Properties? = null,
 
 	@SerializedName("coordinates")
-	val coordinates: List<Any?>? = null
+	val coordinates: List<Double>? = null
 
 )
 

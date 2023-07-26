@@ -10,7 +10,8 @@ import com.example.disastergigihapp.databinding.ItemPostBinding
 class DisasterAdapter(private val reports: List<GeometriesItem>): RecyclerView.Adapter<DisasterAdapter.PostViewHolder>() {
     inner class PostViewHolder(private var binding: ItemPostBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(disasterReports: GeometriesItem) {
-            binding.imageBencana.load("https://akcdn.detik.net.id/community/pasma/2017/12/05/1512472295871205803.jpg")
+            val imageUrl = disasterReports.properties?.imageUrl ?: "https://akcdn.detik.net.id/community/pasma/2017/12/05/1512472295871205803.jpg"
+            binding.imageBencana.load(imageUrl)
             binding.tvTitleBencana.text = disasterReports.properties?.title ?: disasterReports.properties?.disasterType
             binding.tvDeskripsiBencana.text = disasterReports.properties?.text
         }
