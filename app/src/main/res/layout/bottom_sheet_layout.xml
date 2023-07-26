@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bottom_sheet_background"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:id="@+id/bottom_sheet_layout">
 
     <ImageView
         android:layout_width="40dp"
@@ -13,17 +15,22 @@
         android:src="@drawable/baseline_remove_24"
         android:layout_gravity="top|center"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/remove_description" />
+        android:contentDescription="@string/remove_description"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:id="@+id/tvBottomSheetTitle"
         android:text="@string/bottom_sheet_title"
         android:fontFamily="@font/maison_neue_medium"
         android:textSize="18sp"
         android:textColor="@color/black"/>
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"/>
 
 </LinearLayout>

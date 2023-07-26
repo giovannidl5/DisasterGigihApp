@@ -2,5 +2,6 @@
     <string name="app_name">Disaster Gigih App</string>
     <string name="mapbox_access_token" tools:ignore="Typos">pk.eyJ1IjoidmFubjUiLCJhIjoiY2xna2liOXlyMGN4ZzNrcXE3OWRna3V3OCJ9.5qrGGepGhDpKBYtH17dbJQ</string>
     <string name="bottom_sheet_title">Informasi Bencana Terkini</string>
-    <string name="remove_description">Sign for draggable</string>
+    <string name="remove_description">Simbol Draggable</string>
+    <string name="imageBencanaContentDescription">Foto Bencana</string>
 </resources>
