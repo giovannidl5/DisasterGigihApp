@@ -1,4 +1,4 @@
-package com.example.disastergigihapp.data
+package com.example.disastergigihapp.presentation.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -13,6 +13,7 @@ class DisasterAdapter(private val reports: List<GeometriesItem>): RecyclerView.A
             val imageUrl = disasterReports.properties?.imageUrl ?: "https://akcdn.detik.net.id/community/pasma/2017/12/05/1512472295871205803.jpg"
             binding.imageBencana.load(imageUrl)
             binding.tvTitleBencana.text = disasterReports.properties?.title ?: disasterReports.properties?.disasterType
+            binding.tvWaktuBencana.text = disasterReports.properties?.createdAt
             binding.tvDeskripsiBencana.text = disasterReports.properties?.text
         }
     }

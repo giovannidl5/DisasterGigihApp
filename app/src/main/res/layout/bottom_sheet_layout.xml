@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/bottom_sheet_background"
     android:padding="15dp"
-    android:id="@+id/bottom_sheet_layout">
+    android:id="@+id/bottom_sheet_layout"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="false"
+    app:behavior_draggable="true"
+    app:behavior_peekHeight="350dp">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_remove_24"
         android:layout_gravity="top|center"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/remove_description"/>
+        android:contentDescription="@string/deskripsi_remove"/>
 
     <TextView
         android:layout_width="wrap_content"

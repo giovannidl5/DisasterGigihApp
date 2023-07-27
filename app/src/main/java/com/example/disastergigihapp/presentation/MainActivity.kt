@@ -1,4 +1,4 @@
-package com.example.disastergigihapp
+package com.example.disastergigihapp.presentation
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -12,7 +12,8 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.disastergigihapp.data.DisasterAdapter
+import com.example.disastergigihapp.R
+import com.example.disastergigihapp.presentation.recyclerview.DisasterAdapter
 import com.example.disastergigihapp.data.remote.DisasterResponse
 import com.example.disastergigihapp.data.remote.GeometriesItem
 import com.example.disastergigihapp.data.remote.RetrofitClient
@@ -46,6 +47,12 @@ class MainActivity : AppCompatActivity() {
         getReport(rvPost)
     }
 
+    private fun loadMap() {
+        mapView = mainBinding.mapView
+        mapView?.getMapboxMap()?.loadStyleUri(Style.MAPBOX_STREETS)
+        mapView?.scalebar?.enabled = false
+    }
+
     private fun getReport(rvPost: RecyclerView) {
         RetrofitClient.instance.getRecent(604800).enqueue(object: Callback<DisasterResponse> {
             override fun onResponse(
@@ -66,31 +73,26 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun loadMap() {
-        mapView = mainBinding.mapView
-        mapView?.getMapboxMap()?.loadStyleUri(Style.MAPBOX_STREETS)
-        mapView?.scalebar?.enabled = false
-    }
-
     private fun addAnnotationToMap(Lng: Double, Lat: Double) {
-// Create an instance of the Annotation API and get the PointAnnotationManager.
+        // Create an instance of the Annotation API and get the PointAnnotationManager.
         bitmapFromDrawableRes(
             this@MainActivity,
             R.drawable.baseline_place_24
         )?.let {
             val annotationApi = mapView?.annotations
             val pointAnnotationManager = annotationApi?.createPointAnnotationManager()
-// Set options for the resulting symbol layer.
+            // Set options for the resulting symbol layer.
             val pointAnnotationOptions: PointAnnotationOptions = PointAnnotationOptions()
-// Define a geographic coordinate.
+                // Define a geographic coordinate.
                 .withPoint(Point.fromLngLat(Lng, Lat))
-// Specify the bitmap you assigned to the point annotation
-// The bitmap will be added to map style automatically.
+                // Specify the bitmap you assigned to the point annotation
+                // The bitmap will be added to map style automatically.
                 .withIconImage(it)
-// Add the resulting pointAnnotation to the map.
+            // Add the resulting pointAnnotation to the map.
             pointAnnotationManager?.create(pointAnnotationOptions)
         }
     }
+
     private fun bitmapFromDrawableRes(context: Context, @DrawableRes resourceId: Int) =
         convertDrawableToBitmap(AppCompatResources.getDrawable(context, resourceId))
 
@@ -114,4 +116,5 @@ class MainActivity : AppCompatActivity() {
             bitmap
         }
     }
+
 }

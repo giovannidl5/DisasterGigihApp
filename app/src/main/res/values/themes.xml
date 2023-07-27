@@ -11,6 +11,7 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/gojekGreen</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">@color/light_grey</item>
     </style>
 
     <style name="Theme.DisasterGigihApp" parent="Base.Theme.DisasterGigihApp" />

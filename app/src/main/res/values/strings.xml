@@ -2,6 +2,14 @@
     <string name="app_name">Disaster Gigih App</string>
     <string name="mapbox_access_token" tools:ignore="Typos">pk.eyJ1IjoidmFubjUiLCJhIjoiY2xna2liOXlyMGN4ZzNrcXE3OWRna3V3OCJ9.5qrGGepGhDpKBYtH17dbJQ</string>
     <string name="bottom_sheet_title">Informasi Bencana Terkini</string>
-    <string name="remove_description">Simbol Draggable</string>
-    <string name="imageBencanaContentDescription">Foto Bencana</string>
+    <string name="deskripsi_remove">Simbol Draggable</string>
+    <string name="deskripsi_konten_image_bencana">Foto Bencana</string>
+    <string name="hint_edit_text">Nama Provinsi</string>
+    <string name="button_filter_satu">+ Banjir</string>
+    <string name="button_filter_dua">+ Gempa</string>
+    <string name="button_filter_tiga">+ Kebakaran</string>
+    <string name="button_filter_empat">+ Kabut</string>
+    <string name="button_filter_lima">+ Angin Kencang</string>
+    <string name="button_filter_enam">+ Gunung Api</string>
+    <string name="deskripsi_button_settings">Button Settings</string>
 </resources>

@@ -6,4 +6,5 @@
     <color name="black30">#FF303030</color>
     <color name="gojekGreen">#FF00880c</color>
     <color name="grey">#FF666666</color>
+    <color name="light_grey">#FFCFCFCF</color>
 </resources>
