@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.disastergigihapp.R
 import com.example.disastergigihapp.data.remote.GeometriesItem
 import com.example.disastergigihapp.databinding.ItemPostBinding
 
@@ -11,8 +12,20 @@ class DisasterAdapter(private val reports: List<GeometriesItem>): RecyclerView.A
     inner class PostViewHolder(private var binding: ItemPostBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(disasterReports: GeometriesItem) {
             //show the data in recycler view (item_post.xml)
-            val imageUrl = disasterReports.properties?.imageUrl ?: "https://akcdn.detik.net.id/community/pasma/2017/12/05/1512472295871205803.jpg"
-            binding.imageBencana.load(imageUrl)
+
+            val imageUrl = disasterReports.properties?.imageUrl
+            if(disasterReports.properties?.imageUrl == null) {
+                when(disasterReports.properties?.disasterType) {
+                    "floods" -> binding.imageBencana.setImageResource(R.drawable.flood_playstore)
+                    "earthquake" -> binding.imageBencana.setImageResource(R.drawable.earthquake_playstore)
+                    "fire" -> binding.imageBencana.setImageResource(R.drawable.fire_playstore)
+                    "haze" -> binding.imageBencana.setImageResource(R.drawable.haze_playstore)
+                    "wind" -> binding.imageBencana.setImageResource(R.drawable.wind_playstore)
+                    "volcano" -> binding.imageBencana.setImageResource(R.drawable.volcano_playstore)
+                }
+            } else {
+                binding.imageBencana.load(imageUrl)
+            }
             binding.tvTitleBencana.text = disasterReports.properties?.title ?: disasterReports.properties?.disasterType
             binding.tvWaktuBencana.text = disasterReports.properties?.createdAt
             binding.tvDeskripsiBencana.text = disasterReports.properties?.text
