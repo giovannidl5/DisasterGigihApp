@@ -2,6 +2,7 @@ package com.example.disastergigihapp.data.remote
 
 import com.google.gson.annotations.SerializedName
 
+//data classes to get the data from petabencana.id
 data class DisasterResponse(
 
 	@SerializedName("statusCode")
