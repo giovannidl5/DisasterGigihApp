@@ -1,6 +1,7 @@
 package com.example.disastergigihapp.presentation
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
@@ -9,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.DrawableRes
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.disastergigihapp.R
+import com.example.disastergigihapp.data.local.AppPreferences
 import com.example.disastergigihapp.presentation.recyclerview.DisasterAdapter
 import com.example.disastergigihapp.data.remote.DisasterResponse
 import com.example.disastergigihapp.data.remote.GeometriesItem
@@ -35,6 +38,11 @@ class MainActivity : AppCompatActivity() {
     private val list = ArrayList<GeometriesItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        if (AppPreferences.getDarkModePreference(this)) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
@@ -42,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         val rvPost = findViewById<RecyclerView>(R.id.rvPost)
         rvPost.setHasFixedSize(true)
         rvPost.layoutManager = LinearLayoutManager(this)
+
+        mainBinding.buttonSettings.setOnClickListener {
+            val intent = Intent(this, DarkMode::class.java)
+            startActivity(intent)
+        }
 
         loadMap()
         getReport(rvPost)

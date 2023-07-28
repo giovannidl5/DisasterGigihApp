@@ -14,9 +14,9 @@ class DisasterAdapter(private val reports: List<GeometriesItem>): RecyclerView.A
             //show the data in recycler view (item_post.xml)
 
             val imageUrl = disasterReports.properties?.imageUrl
-            if(disasterReports.properties?.imageUrl == null) {
+            if(imageUrl == null) {
                 when(disasterReports.properties?.disasterType) {
-                    "floods" -> binding.imageBencana.setImageResource(R.drawable.flood_playstore)
+                    "flood" -> binding.imageBencana.setImageResource(R.drawable.flood_playstore)
                     "earthquake" -> binding.imageBencana.setImageResource(R.drawable.earthquake_playstore)
                     "fire" -> binding.imageBencana.setImageResource(R.drawable.fire_playstore)
                     "haze" -> binding.imageBencana.setImageResource(R.drawable.haze_playstore)

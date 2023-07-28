@@ -11,6 +11,6 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/gojekGreen</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="colorTertiary">@color/grey</item>
+        <item name="colorTertiary">@color/black</item>
     </style>
 </resources>

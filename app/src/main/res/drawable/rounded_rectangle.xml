@@ -7,7 +7,7 @@
         android:radius="300dp"/>
 
     <solid
-        android:color="@color/white"/>
+        android:color="?attr/colorPrimary"/>
 
     <stroke
         android:color="@color/grey"
