@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.DarkMode"
+    tools:context=".presentation.DarkModeActivity"
     android:fitsSystemWindows="false"
     android:background="?attr/colorPrimary">
 
@@ -46,7 +46,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/separatorLine"
+        android:id="@+id/separatorLineSettings"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:src="@drawable/rectangle"
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/separatorLine"
+        app:layout_constraintTop_toBottomOf="@id/separatorLineSettings"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp">
